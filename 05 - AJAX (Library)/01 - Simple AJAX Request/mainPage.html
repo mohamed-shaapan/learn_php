@@ -1,0 +1,30 @@
+<html>
+	<head>
+	</head>
+	
+	<body>
+		AJAX Instant Search<br><br>
+		<input type="text" onkeyup="showHint(this.value)" />
+		
+		<div>
+			<p id="txtHint">Some Text</p>
+		</div>
+	
+	</body>
+	
+	<script>
+		function showHint(search_term){
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					//01- obtain server response
+					var server_response=xmlhttp.responseText;
+					//02-apply your operation
+					document.getElementById("txtHint").innerHTML = server_response;
+				}
+			};
+			xmlhttp.open("GET", "gethint.php?q=" + search_term, true);
+			xmlhttp.send();
+		}
+	</script>
+</html>

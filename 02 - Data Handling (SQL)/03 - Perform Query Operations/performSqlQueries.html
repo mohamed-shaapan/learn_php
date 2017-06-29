@@ -1,0 +1,29 @@
+<html>
+	<head>
+	</head>
+	
+	<body>
+
+		<h2>Account Login</h2>
+
+		<form action="queryRequestHandler.php" method="post">
+			User Name:
+			<input type="text" placeholder="user name" name="user_name" />
+			//Unique Field
+			<br><br>
+			Email:
+			<input type="email" placeholder="userID@provider.domain" name="user_mail" />
+			<br><br>
+			Password:
+			<input type="password" placeholder="987654321ABC" name="user_password" />
+			<hr>
+			<input type="submit" value="Insert New" name="insert_new_record" />
+			<input type="submit" value="Update Record" name="update_existing_record" />
+			<input type="submit" value="Remove Record" name="remove_existing_record" />
+			<input type="submit" value="Reveal Record" name="get_existing_record" />
+		</form>
+		
+	</body>
+
+</html>
+

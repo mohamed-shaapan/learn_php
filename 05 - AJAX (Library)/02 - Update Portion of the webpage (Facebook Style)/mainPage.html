@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+	</head>
+	
+	<body class="w3-margin">
+		<h3>AJAX Update Portions of the Page</h3>
+		<input type="button" onclick="fetch_story()" value="Fetch New Story"/>
+		<br><br>
+		
+		<div id="new_story">
+		</div>
+	
+	</body>
+	
+	<script>
+		function fetch_story(){
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					//01- obtain server response
+					var server_response=xmlhttp.responseText;
+					//02-apply your operation
+					document.getElementById("new_story").innerHTML = server_response;
+				}
+			};
+			xmlhttp.open("GET", "gethint.php?q=''" , true);
+			xmlhttp.send();
+		}
+	</script>
+</html>
